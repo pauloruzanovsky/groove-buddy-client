@@ -1,7 +1,11 @@
 
 import LoginImg from '../assets/LoginImg.png'
+import { useContext } from 'react';
+import { myContext } from './Context.tsx'
+
 
 export default function LoginPage() {
+    console.log(useContext(myContext))
     const handleGoogleSignIn = () => {
         window.open(`${process.env.BACK_END_URI}/auth/google`,"_self")
         }

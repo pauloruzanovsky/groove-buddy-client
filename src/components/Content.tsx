@@ -21,9 +21,10 @@ function Content () {
                     console.log('playlists fetched and updated')
                 })
       };
-
     useEffect(() => {
         fetchPlaylists();
+        console.log(userObject)
+
     },[])
 
     const createPlaylist = (e: React.FormEvent, playlistInput: string) => {

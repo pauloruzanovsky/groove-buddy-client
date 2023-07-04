@@ -86,11 +86,7 @@ function Content () {
           navigate('/')
           const newPlaylists = playlists.filter((playlist:PlaylistInterface) => playlist._id !== id)
           setPlaylists(newPlaylists)
-
     }
-
-
-
     return (
         <>
         <Header userObject={userObject}

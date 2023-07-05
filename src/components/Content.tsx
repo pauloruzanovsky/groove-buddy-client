@@ -23,8 +23,6 @@ function Content () {
       };
     useEffect(() => {
         fetchPlaylists();
-        console.log(userObject)
-
     },[])
 
     const createPlaylist = (e: React.FormEvent, playlistInput: string) => {
@@ -88,13 +86,13 @@ function Content () {
           setPlaylists(newPlaylists)
     }
     return (
-        <>
+        <div className='bg-base-100 flex flex-col items-center'>
         <Header userObject={userObject}
                 playlistInput={playlistInput} 
                 setPlaylistInput={setPlaylistInput} 
                 createPlaylist={createPlaylist}
         />
-        <main className='p-3 bg-base-100'>
+        <main className='p-3 flex justify-center'>
         <Routes>
             <Route path='/' element={<PrivateRoute><Playlists playlists={playlists}/></PrivateRoute>}/>
             <Route path='/playlists/:id' element={<PrivateRoute><Playlist updatePlaylistName={updatePlaylistName} 
@@ -103,7 +101,7 @@ function Content () {
                                                                             playlists={playlists}/></PrivateRoute>}/>
         </Routes>
         </main>
-        </>
+        </div>
     );
 }
 

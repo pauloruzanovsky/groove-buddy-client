@@ -134,7 +134,17 @@ export default function Playlist({ updatePlaylistName, deletePlaylist, playlists
   }
     
     return(
-        <div className='grid grid-cols-2 gap-4 text-base-content'>
+        <div className='max-w-7xl grid md:grid-cols-2 gap-4 text-base-content'>
+          <div className='md:hidden'>
+          <AddSongForm 
+            addSongToPlaylist={addSongToPlaylist} 
+            disableComponent={disableComponent} 
+            playlist={playlist} 
+            audioPlayer={audioPlayer}
+            isPlaying={isPlaying}
+            currentSong={currentSong}
+            handlePreview={handlePreview}/>
+          </div>
           <div className='bg-base-300 rounded p-4 '>
             <div className='flex items-center justify-between mb-3 pb-2'>
               <h2 className='font-bold text-5xl '>{playlist.name}</h2>
@@ -147,7 +157,8 @@ export default function Playlist({ updatePlaylistName, deletePlaylist, playlists
             currentSong={currentSong}
             handlePreview={handlePreview}/>
           </div>
-          <AddSongForm 
+          <div className='hidden md:flex'>
+          <AddSongForm
             addSongToPlaylist={addSongToPlaylist} 
             disableComponent={disableComponent} 
             playlist={playlist} 
@@ -155,6 +166,7 @@ export default function Playlist({ updatePlaylistName, deletePlaylist, playlists
             isPlaying={isPlaying}
             currentSong={currentSong}
             handlePreview={handlePreview}/>
+          </div>
         </div>
     )
 }

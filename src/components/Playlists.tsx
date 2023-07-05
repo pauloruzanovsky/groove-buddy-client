@@ -13,10 +13,8 @@ export default function Playlists({ playlists } : {playlists: Array<PlaylistInte
     console.log(imagesArray)
     return(
         <div className='p-2 text-base-content'>
-            <div className='flex'>
                 <div className='font-bold'>Your playlists</div>
-            </div>
-            <div className='flex gap-4 mt-3'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-3'>
                 {playlists.map((playlist : PlaylistInterface) => (
                         <Link key={playlist._id} to={`/playlists/${playlist._id}`}>
                         <div className="card card-compact w-48 h-72 bg-base-200 text-base-content shadow-xl">
